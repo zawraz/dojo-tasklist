@@ -1,5 +1,6 @@
 import { EditIcon, ViewIcon } from "@chakra-ui/icons"
 import {
+	Avatar,
 	Box,
 	Button,
 	Card,
@@ -25,13 +26,11 @@ export default function Dashboard() {
 	const tasks = useLoaderData()
 	return (
 		<SimpleGrid spacing={10} minChildWidth="300px">
-			{tasks?.map(({ id, title, description, author }) => (
+			{tasks?.map(({ id, title, description, author, img }) => (
 				<Card key={id} borderTop="8px" borderColor="purple.400">
 					<CardHeader>
 						<Flex gap={5}>
-							<Box w="50px" h="50px">
-								<Text>AVATAR</Text>
-							</Box>
+							<Avatar src={img} />
 							<Box>
 								<Heading as="h3" size="sm">
 									{title}
